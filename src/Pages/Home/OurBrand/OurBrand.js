@@ -6,7 +6,7 @@ import hp from '../../../assets/brand/MicrosoftTeams-image-1.jpg';
 
 const OurBrand = () => {
 	return (
-		<div className="py-12 rounded shadow-2xl px-12 border">
+		<div className="py-12 rounded shadow-sm px-12 border max-w-screen-2xl mx-auto">
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-between">
 				<div>
 					<img src={microsoft} alt="" />
