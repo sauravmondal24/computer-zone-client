@@ -4,17 +4,16 @@ import bannerImg from '../../../assets/img/Cover-Photo-5-8-2022.png';
 const Banner = () => {
 	return (
 		<div>
-			<div className="hero min-h-screen bg-base-100">
-				<div className="hero-content flex lg:flex-row-reverse ">
-					<div className="flex-1 w-1/2">
-						<img src={bannerImg} className=" rounded-lg " alt="" />
-					</div>
-					<div className="flex-1 w-1/2">
-						<h1 className="text-6xl font-bold text-blue-500">
+			<div className="hero py-12 bg-base-100">
+				<div className="hero-content flex md:flex-row-reverse ">
+					<img src={bannerImg} className="w-1/2 rounded-lg " alt="" />
+
+					<div className="w-1/2">
+						<h1 className="md:text-7xl font-bold text-blue-500">
 							Used Or Brand New Open Box Laptop
 						</h1>
-						<p className="py-6 text-2xl font-bold">For Wholesale & Retail</p>
-						<button className="btn btn-warning font-bold text-white">
+						<p className="py-6 md:text-4xl font-bold">For Wholesale & Retail</p>
+						<button className="btn btn-lg text-2xl btn-warning font-bold  text-white">
 							View Store
 						</button>
 					</div>
