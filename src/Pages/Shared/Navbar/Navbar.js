@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../../assets/img/logo.png';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const Navbar = () => {
+	const { user, logOut } = useContext(AuthContext);
+
+	const handleLogOut = () => {
+		logOut()
+			.then(() => {})
+			.catch((error) => console.error(error));
+	};
+
 	const menuItems = (
 		<React.Fragment>
 			<li className="text-2xl font-bold">
-				<Link>Home</Link>
+				<Link to="/">Home</Link>
 			</li>
 			<li className="text-2xl font-bold">
 				<Link>Blog</Link>
@@ -108,12 +117,16 @@ const Navbar = () => {
 											<span className="badge">New</span>
 										</Link>
 									</li>
-									<li>
-										<Link>Settings</Link>
-									</li>
-									<li>
-										<Link>Logout</Link>
-									</li>
+
+									{user?.uid ? (
+										<li>
+											<button onClick={handleLogOut}>SignOut</button>
+										</li>
+									) : (
+										<li>
+											<Link to="/login">LogIn</Link>
+										</li>
+									)}
 								</ul>
 							</div>
 						</div>
