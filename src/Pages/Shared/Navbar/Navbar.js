@@ -26,6 +26,24 @@ const Navbar = () => {
 			<li className="text-2xl font-bold">
 				<Link>Contact</Link>
 			</li>
+			{user?.uid ? (
+				<>
+					<li className="text-2xl font-bold">
+						<Link to="/dashboard">Dashboard</Link>
+					</li>
+					<li>
+						<button className="text-2xl font-bold" onClick={handleLogOut}>
+							SignOut
+						</button>
+					</li>
+				</>
+			) : (
+				<li>
+					<Link className="text-2xl font-bold" to="/login">
+						LogIn
+					</Link>
+				</li>
+			)}
 		</React.Fragment>
 	);
 	return (
@@ -118,7 +136,7 @@ const Navbar = () => {
 										</Link>
 									</li>
 
-									{user?.uid ? (
+									{/* {user?.uid ? (
 										<li>
 											<button onClick={handleLogOut}>SignOut</button>
 										</li>
@@ -126,7 +144,7 @@ const Navbar = () => {
 										<li>
 											<Link to="/login">LogIn</Link>
 										</li>
-									)}
+									)} */}
 								</ul>
 							</div>
 						</div>
