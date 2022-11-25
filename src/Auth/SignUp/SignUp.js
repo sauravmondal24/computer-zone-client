@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthProvider';
 import toast from 'react-hot-toast';
@@ -9,27 +9,59 @@ const SignUp = () => {
 	const { register, handleSubmit } = useForm();
 	const [singUpError, setSignUpError] = useState('');
 	const { createUser, updateUser } = useContext(AuthContext);
+	const navigate = useNavigate();
 
 	const handleSignUp = (data) => {
 		console.log(data);
 		setSignUpError('');
 
-		createUser(data.email, data.password)
+		createUser(data.email, data.password, data.role)
 			.then((result) => {
 				const user = result.user;
 				console.log(user);
-				toast('User Created Successfully');
+				toast.success('User Created Successfully');
 
 				const userInfo = {
 					displayName: data.name
 				};
 				updateUser(userInfo)
-					.then(() => {})
+					.then(() => {
+						saveUser(data.name, data.email, data.role);
+					})
 					.catch((error) => console.error(error));
 			})
 			.catch((error) => {
 				console.error(error);
 				setSignUpError(error.message);
+			});
+	};
+
+	const saveUser = (name, email, role) => {
+		const user = { name, email, role };
+		// console.log('api before data', user);
+		fetch('http://localhost:5000/users', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(user)
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log('user data', data);
+				getUserToken(email);
+			});
+	};
+
+	const getUserToken = (email) => {
+		fetch(`http://localhost:5000/jwt?email=${email}`)
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.accessToken) {
+					localStorage.setItem('accessToken', data.accessToken);
+					navigate('/');
+					console.log(data);
+				}
 			});
 	};
 
@@ -58,24 +90,26 @@ const SignUp = () => {
 							className="w-full border my-3 p-3 rounded"
 							required
 						/>
+						<h2 className="text-lg font-bold">Your Role</h2>
 
-						<label className="text-2xl font-bold">
+						<label className="text-lg font-bold">
 							<input
-								{...register('accountType')}
+								{...register('role')}
 								type="radio"
 								value="seller"
 								required
 							/>
 							Seller
 						</label>
-						<label className="text-2xl font-bold">
+						<br />
+						<label className="text-lg font-bold">
 							<input
-								{...register('accountType')}
+								{...register('role')}
 								type="radio"
-								value="normal"
+								value="buyer"
 								required
 							/>
-							Normal
+							Buyer
 						</label>
 
 						<button className="btn w-full btn-primary mt-3">SignUp</button>

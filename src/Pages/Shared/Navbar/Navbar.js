@@ -14,32 +14,32 @@ const Navbar = () => {
 
 	const menuItems = (
 		<React.Fragment>
-			<li className="text-2xl font-bold">
+			<li className="text-lg font-bold">
 				<Link to="/">Home</Link>
 			</li>
-			<li className="text-2xl font-bold">
+			<li className="text-lg font-bold">
 				<Link>Blog</Link>
 			</li>
-			<li className="text-2xl font-bold">
+			<li className="text-lg font-bold">
 				<Link>About</Link>
 			</li>
-			<li className="text-2xl font-bold">
+			<li className="text-lg font-bold">
 				<Link>Contact</Link>
 			</li>
 			{user?.uid ? (
 				<>
-					<li className="text-2xl font-bold">
+					<li className="text-lg font-bold">
 						<Link to="/dashboard">Dashboard</Link>
 					</li>
 					<li>
-						<button className="text-2xl font-bold" onClick={handleLogOut}>
+						<button className="text-lg font-bold" onClick={handleLogOut}>
 							SignOut
 						</button>
 					</li>
 				</>
 			) : (
 				<li>
-					<Link className="text-2xl font-bold" to="/login">
+					<Link className="text-lg font-bold" to="/login">
 						LogIn
 					</Link>
 				</li>
@@ -68,21 +68,54 @@ const Navbar = () => {
 							</svg>
 						</label>
 						<ul
-							tabIndex={0}
+							tabIndex={1}
 							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 						>
 							{menuItems}
 						</ul>
 					</div>
-					<Link className="btn btn-ghost normal-case text-xl md:w-64">
-						<img src={Logo} alt="" />
+					<Link to="/" className="">
+						<img className="md:w-12 lg:w-40" src={Logo} alt="" />
 					</Link>
 				</div>
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal p-0">{menuItems}</ul>
 				</div>
+
 				<div className="navbar-end ">
-					<div className="flex">
+					{/* Profile Image  */}
+					<div>
+						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+							<div className="w-10 rounded-full">
+								<img src="https://placeimg.com/80/80/people" alt="" />
+							</div>
+						</label>
+					</div>
+
+					{/* mobile drawer */}
+
+					<label
+						htmlFor="dashboard-drawer"
+						tabIndex={2}
+						className="btn btn-ghost lg:hidden"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							className="h-5 w-5"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
+								d="M4 6h16M4 12h8m-8 6h16"
+							/>
+						</svg>
+					</label>
+
+					{/* <div className="flex">
 						<div className="dropdown dropdown-end">
 							<label tabIndex={0} className="btn btn-ghost btn-circle">
 								<div className="indicator">
@@ -135,20 +168,10 @@ const Navbar = () => {
 											<span className="badge">New</span>
 										</Link>
 									</li>
-
-									{/* {user?.uid ? (
-										<li>
-											<button onClick={handleLogOut}>SignOut</button>
-										</li>
-									) : (
-										<li>
-											<Link to="/login">LogIn</Link>
-										</li>
-									)} */}
 								</ul>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
