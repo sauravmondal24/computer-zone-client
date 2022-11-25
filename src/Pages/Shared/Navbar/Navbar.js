@@ -21,7 +21,7 @@ const Navbar = () => {
 				<Link>Blog</Link>
 			</li>
 			<li className="text-lg font-bold">
-				<Link>My Product</Link>
+				<Link to="/myProduct">My Product</Link>
 			</li>
 			<li className="text-lg font-bold">
 				<Link>Contact</Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
 	);
 	return (
 		<div className="w-100 bg-blue-200 py-4">
-			<div className="navbar max-w-screen-2xl mx-auto">
+			<div className="navbar max-w-screen-xl mx-auto">
 				<div className="navbar-start">
 					<div className="dropdown">
 						<label tabIndex={0} className="btn btn-ghost lg:hidden">

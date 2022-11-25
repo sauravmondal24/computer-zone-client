@@ -10,7 +10,7 @@ import {
 const Footer = () => {
 	return (
 		<div style={{ backgroundColor: '#132146' }}>
-			<div className="py-12  text-white text-md max-w-screen-2xl mx-auto">
+			<div className="py-12  text-white text-md max-w-screen-xl mx-auto">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-between">
 					<div>
 						<h2 className="text-2xl font-bold py-3">ABOUT US</h2>

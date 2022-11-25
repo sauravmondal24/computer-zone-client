@@ -14,7 +14,7 @@ const CategorySec = () => {
 	// fetch('http://localhost:5000/mainCategory').then((res) => res.json())
 
 	return (
-		<div className="py-12 mt-14 max-w-screen-2xl mx-auto">
+		<div className="py-12 mt-14 max-w-screen-xl mx-auto">
 			<h1 className="text-5xl font-bold text-center">Explore By Category</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
 				{MainCategoriesItem &&
