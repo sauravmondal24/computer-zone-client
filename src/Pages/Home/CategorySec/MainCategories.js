@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MainCategories = ({ MainCategory }) => {
 	return (
@@ -15,7 +16,12 @@ const MainCategories = ({ MainCategory }) => {
 					<h2 className="card-title">{MainCategory.name}</h2>
 					<p>If a dog chews shoes whose shoes does he choose?</p>
 					<div className="card-actions">
-						<button className="btn btn-primary">View More</button>
+						<Link
+							to={`/productsbycategory/${MainCategory.category}`}
+							className="btn btn-primary"
+						>
+							View More
+						</Link>
 					</div>
 				</div>
 			</div>

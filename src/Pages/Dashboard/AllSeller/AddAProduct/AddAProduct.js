@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../../../Context/AuthProvider';
 // import { useNavigate } from 'react-router-dom';
 
 const AddAProduct = () => {
 	const { register, handleSubmit } = useForm();
+	const { user } = useContext(AuthContext);
 	// const navigate = useNavigate();
 
 	const handleAddProduct = (data) => {
 		console.log(data);
+		const product = {
+			...data,
+			seller: user?.email
+		};
 
 		fetch('http://localhost:5000/addProduct', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
 			},
-			body: JSON.stringify(data)
+			body: JSON.stringify(product)
 		})
 			.then((res) => res.json())
 			.then((data) => {

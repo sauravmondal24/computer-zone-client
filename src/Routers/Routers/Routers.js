@@ -10,8 +10,10 @@ import AllSeller from '../../Pages/Dashboard/AllSeller/AllSeller';
 import Dashboard from '../../Pages/Dashboard/Dashboard/Dashboard';
 import Home from '../../Pages/Home/Home/Home';
 import MyProducts from '../../Pages/MyProducts/MyProducts';
+import ProductsByCategory from '../../Pages/ProductsByCategory/ProductsByCategory';
+import SellerProducts from '../../Pages/SellerProducts/SellerProducts';
 import AdminRoute from '../AdminRoute/AdminRoute';
-import PrivateRoute from '../PrivateRoute/PrivateRoute';
+// import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
 	{
@@ -35,18 +37,19 @@ const router = createBrowserRouter([
 				element: <SignUp></SignUp>
 			},
 			{
-				path: '/',
+				path: '/productsbycategory/:category',
+				element: <ProductsByCategory></ProductsByCategory>
+			},
+			{
+				path: '/blog',
 				element: <Blog></Blog>
 			}
 		]
 	},
+
 	{
 		path: '/dashboard',
-		element: (
-			<PrivateRoute>
-				<DashboardLayout></DashboardLayout>
-			</PrivateRoute>
-		),
+		element: <DashboardLayout></DashboardLayout>,
 		children: [
 			{
 				path: '/dashboard',
@@ -62,11 +65,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/dashboard/addProduct',
-				element: (
-					<AdminRoute>
-						<AddAProduct></AddAProduct>
-					</AdminRoute>
-				)
+				element: <AddAProduct></AddAProduct>
 			},
 
 			{
@@ -76,6 +75,10 @@ const router = createBrowserRouter([
 						<AllBuyer></AllBuyer>
 					</AdminRoute>
 				)
+			},
+			{
+				path: '/dashboard/sellerproducts',
+				element: <SellerProducts></SellerProducts>
 			}
 		]
 	}

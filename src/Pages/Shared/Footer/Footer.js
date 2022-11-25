@@ -32,16 +32,16 @@ const Footer = () => {
 						<div>
 							<ul>
 								<li className="py-2">
-									<Link className="text-2xl">My account</Link>
+									<Link className="text-xl">My account</Link>
 								</li>
 								<li className="py-2">
-									<Link className="text-2xl">Track your order</Link>
+									<Link className="text-xl">Track your order</Link>
 								</li>
 								<li className="py-2">
-									<Link className="text-2xl">Wishlist</Link>
+									<Link className="text-xl">Wishlist</Link>
 								</li>
 								<li className="py-2">
-									<Link className="text-2xl">Contact</Link>
+									<Link className="text-xl">Contact</Link>
 								</li>
 							</ul>
 						</div>
@@ -52,16 +52,16 @@ const Footer = () => {
 						<div>
 							<ul>
 								<li className="py-2">
-									<Link className="text-2xl">About</Link>
+									<Link className="text-xl">About</Link>
 								</li>
 								<li className="py-2">
-									<Link className="text-2xl">Privacy Policy</Link>
+									<Link className="text-xl">Privacy Policy</Link>
 								</li>
 								<li className="py-2">
-									<Link className="text-2xl">Refund And Return</Link>
+									<Link className="text-xl">Refund And Return</Link>
 								</li>
 								<li className="py-2">
-									<Link className="text-2xl">Refund And Return</Link>
+									<Link className="text-xl">Refund And Return</Link>
 								</li>
 							</ul>
 						</div>

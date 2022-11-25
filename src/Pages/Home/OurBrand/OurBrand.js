@@ -2,7 +2,6 @@ import React from 'react';
 import microsoft from '../../../assets/brand/Microsoft-Logo-40y-1.jpg';
 import dell from '../../../assets/brand/dell-technologies-logo-40y-1.jpg';
 import hp from '../../../assets/brand/MicrosoftTeams-image-1.jpg';
-// import lenovo from '../../../assets/brand/Lenovo_logo_40y-1';
 
 const OurBrand = () => {
 	return (
