@@ -21,7 +21,7 @@ const Navbar = () => {
 				<Link>Blog</Link>
 			</li>
 			<li className="text-lg font-bold">
-				<Link>About</Link>
+				<Link>My Product</Link>
 			</li>
 			<li className="text-lg font-bold">
 				<Link>Contact</Link>

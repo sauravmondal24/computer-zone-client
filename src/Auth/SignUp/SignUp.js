@@ -38,7 +38,7 @@ const SignUp = () => {
 
 	const saveUser = (name, email, role) => {
 		const user = { name, email, role };
-		// console.log('api before data', user);
+
 		fetch('http://localhost:5000/users', {
 			method: 'POST',
 			headers: {
@@ -49,21 +49,21 @@ const SignUp = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log('user data', data);
-				getUserToken(email);
+				navigate('/');
 			});
 	};
 
-	const getUserToken = (email) => {
-		fetch(`http://localhost:5000/jwt?email=${email}`)
-			.then((res) => res.json())
-			.then((data) => {
-				if (data.accessToken) {
-					localStorage.setItem('accessToken', data.accessToken);
-					navigate('/');
-					console.log(data);
-				}
-			});
-	};
+	// const getUserToken = (email) => {
+	// 	fetch(`http://localhost:5000/jwt?email=${email}`)
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			if (data.accessToken) {
+	// 				localStorage.setItem('accessToken', data.accessToken);
+	// 				navigate('/');
+	// 				console.log(data);
+	// 			}
+	// 		});
+	// };
 
 	return (
 		<div>
