@@ -31,7 +31,12 @@ const MyProducts = () => {
 						))}
 				</div>
 			</div>
-			<BookingModal bookingLaptop={bookingLaptop}></BookingModal>
+			{bookingLaptop && (
+				<BookingModal
+					bookingLaptop={bookingLaptop}
+					setBookingLaptop={setBookingLaptop}
+				></BookingModal>
+			)}
 		</div>
 	);
 };

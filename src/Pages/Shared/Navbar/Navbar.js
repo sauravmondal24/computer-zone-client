@@ -83,7 +83,7 @@ const Navbar = () => {
 				</div>
 
 				<div className="navbar-end ">
-					{/* Profile Image  */}
+					<h1>{user?.displayName}</h1>
 					<div>
 						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 							<div className="w-10 rounded-full">
@@ -91,8 +91,6 @@ const Navbar = () => {
 							</div>
 						</label>
 					</div>
-
-					{/* mobile drawer */}
 
 					<label
 						htmlFor="dashboard-drawer"
