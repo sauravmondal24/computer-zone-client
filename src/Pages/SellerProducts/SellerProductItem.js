@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
+const SellerProductItem = ({ sellerproduct }) => {
 	const {
 		name,
 		image,
@@ -11,7 +11,7 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 		location,
 		resale,
 		year
-	} = myProduct;
+	} = sellerproduct;
 	return (
 		<div>
 			<div className="card bg-base-200 shadow-xl h-[550px] border">
@@ -46,14 +46,7 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 						</div>
 					</div>
 					<div className="card-actions pb-4">
-						{/* <button className="btn btn-primary btn-md w-full">Book now</button> */}
-						<label
-							onClick={() => setBookingLaptop(myProduct)}
-							className="btn btn-primary btn-md w-full"
-							htmlFor="booking-modal"
-						>
-							Book now
-						</label>
+						<button className="btn btn-primary btn-md w-full ">Book now</button>
 					</div>
 				</div>
 			</div>
@@ -61,4 +54,4 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 	);
 };
 
-export default MyProductsItem;
+export default SellerProductItem;

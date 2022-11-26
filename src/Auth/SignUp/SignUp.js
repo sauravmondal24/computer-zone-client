@@ -12,7 +12,7 @@ const SignUp = () => {
 	const navigate = useNavigate();
 
 	const handleSignUp = (data) => {
-		console.log(data);
+		// console.log(data);
 		setSignUpError('');
 
 		createUser(data.email, data.password, data.role)

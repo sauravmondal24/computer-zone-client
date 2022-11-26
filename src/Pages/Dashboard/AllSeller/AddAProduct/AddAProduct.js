@@ -6,10 +6,12 @@ import { AuthContext } from '../../../../Context/AuthProvider';
 
 const AddAProduct = () => {
 	const { register, handleSubmit } = useForm();
+	// const [startDate, setStartDate] = useState(new Date());
 	const { user } = useContext(AuthContext);
 	// const navigate = useNavigate();
 
 	const handleAddProduct = (data) => {
+		// <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />;
 		console.log(data);
 		const product = {
 			...data,
@@ -26,7 +28,7 @@ const AddAProduct = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log('user data', data);
-				data.reset();
+				// data.reset();
 				toast.success('Product Upload Successful');
 				// navigate('/');
 			});
@@ -36,7 +38,7 @@ const AddAProduct = () => {
 		<div>
 			<div>
 				<div className="md:h-[900px] w-9/12  m-auto flex justify-center items-center">
-					<div className="border p-8 border-primary rounded">
+					<div className="border p-8 border-primary rounded text-black-700">
 						<h1 className="text-4xl font-bold text-center py-5">
 							Add A Product
 						</h1>
@@ -44,12 +46,18 @@ const AddAProduct = () => {
 							<input
 								{...register('name')}
 								placeholder="Product name"
-								className="w-1/2 border p-3 my-3 rounded"
+								className="w-full border p-3 my-3 rounded"
 								required
 							/>
 							<input
 								{...register('price')}
-								placeholder="Product Price"
+								placeholder="Original price"
+								className="w-1/2 border p-3 my-3 rounded"
+								required
+							/>
+							<input
+								{...register('resale')}
+								placeholder="Resale price"
 								className="w-1/2 border p-3 my-3 rounded"
 								required
 							/>
