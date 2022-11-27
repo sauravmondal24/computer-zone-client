@@ -12,7 +12,9 @@ const ContractSection = () => {
 						</div>
 						<div className="card flex-shrink-0 w-1/2  shadow-2xl bg-base-100">
 							<div className="card-body font-bold">
-								<h2 className="text-3xl font-bold text-center">Contact Us</h2>
+								<h2 className="text-3xl font-bold text-center text-blue-800">
+									Contact Us
+								</h2>
 								<div className="form-control">
 									<label className="label">
 										<span className="label-text">Your Name</span>

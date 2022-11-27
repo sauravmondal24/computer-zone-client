@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
+import { Link } from 'react-router-dom';
 
 const BuyerOrder = () => {
 	const [deleteOrder, setDeleteOrder] = useState(null);
-	// const [closeModal, setCloseModal] = useState();
 
 	const closeModal = () => {
 		setDeleteOrder(null);
@@ -59,9 +59,12 @@ const BuyerOrder = () => {
 									<td>{orders.phoneNumber}</td>
 									<td>{orders.meetingLocation}</td>
 									<td>
-										<button className="btn btn-sm btn-success text-white mx-2">
+										<Link
+											to={`/dashboard/payment/${orders._id}`}
+											className="btn btn-sm btn-success text-white mx-2"
+										>
 											Pay
-										</button>
+										</Link>
 										<label
 											onClick={() => setDeleteOrder(orders)}
 											htmlFor="confirmation-modal"

@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
 	return (
-		<div style={{ backgroundColor: '#132146' }}>
+		<footer style={{ backgroundColor: '#132146' }}>
 			<div className="py-12  text-white text-md max-w-screen-xl mx-auto">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-between">
 					<div>
@@ -61,7 +61,7 @@ const Footer = () => {
 									<Link className="text-xl">Refund And Return</Link>
 								</li>
 								<li className="py-2">
-									<Link className="text-xl">Refund And Return</Link>
+									<Link className="text-xl">Terms and Conditions</Link>
 								</li>
 							</ul>
 						</div>
@@ -81,7 +81,12 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+			<div className="footer footer-center p-4 bg-blue-300 text-base-content">
+				<div>
+					<p>Copyright © 2022 - All right reserved by Computer Zone Ltd</p>
+				</div>
+			</div>
+		</footer>
 	);
 };
 

@@ -83,7 +83,7 @@ const Navbar = () => {
 				</div>
 
 				<div className="navbar-end ">
-					<h1>{user?.displayName}</h1>
+					<h1 className="font-bold">{user?.displayName}</h1>
 					<h1>{user?.role}</h1>
 					<div>
 						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">

@@ -12,7 +12,7 @@ const DashboardLayout = () => {
 	const { user } = useContext(AuthContext);
 	const [isAdmin] = useAdmin(user?.email);
 	const [isSeller] = useSeller(user?.email);
-	const [isBuyer] = useBuyer(user?.email);
+	// const [isBuyer] = useBuyer(user?.email);
 
 	return (
 		<div>
@@ -34,21 +34,29 @@ const DashboardLayout = () => {
 						></label>
 						<ul className="menu p-4 w-80 bg-base-100 text-base-content">
 							<li>
-								<Link to="/dashboard">Dashboard</Link>
+								<Link className="font-bold text-lg" to="/dashboard">
+									Dashboard
+								</Link>
 							</li>
 
 							<li>
-								<Link to="/dashboard/buyerOrder">Buyer Order</Link>
+								<Link className="font-bold text-lg" to="/dashboard/buyerOrder">
+									Buyer Order
+								</Link>
 							</li>
 
 							{isAdmin && (
 								<>
 									<li>
-										<Link to="/dashboard/seller">All Seller</Link>
+										<Link className="font-bold text-lg" to="/dashboard/seller">
+											All Seller
+										</Link>
 									</li>
 
 									<li>
-										<Link to="/dashboard/buyer">All Buyer</Link>
+										<Link className="font-bold text-lg" to="/dashboard/buyer">
+											All Buyer
+										</Link>
 									</li>
 								</>
 							)}
@@ -56,10 +64,20 @@ const DashboardLayout = () => {
 							{isSeller && (
 								<>
 									<li>
-										<Link to="/dashboard/addProduct">Add A Product</Link>
+										<Link
+											className="font-bold text-lg"
+											to="/dashboard/addProduct"
+										>
+											Add A Product
+										</Link>
 									</li>
 									<li>
-										<Link to="/dashboard/sellerproducts">My Products</Link>
+										<Link
+											className="font-bold text-lg"
+											to="/dashboard/sellerproducts"
+										>
+											My Products
+										</Link>
 									</li>
 								</>
 							)}

@@ -10,7 +10,7 @@ const Banner = () => {
 					<img src={bannerImg} className="md:w-1/2 rounded-lg " alt="" />
 
 					<div className="md:w-1/2">
-						<h1 className="lg:text-6xl md:text-4xl font-bold text-blue-500">
+						<h1 className="lg:text-6xl md:text-4xl font-bold text-blue-800">
 							Used Or Brand New Open Box Laptop
 						</h1>
 						<p className="py-6 md:text-4xl font-bold">For Wholesale & Retail</p>
