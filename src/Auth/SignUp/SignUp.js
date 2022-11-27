@@ -1,15 +1,20 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthProvider';
 import toast from 'react-hot-toast';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const SignUp = () => {
 	const { register, handleSubmit } = useForm();
 	const [singUpError, setSignUpError] = useState('');
-	const { createUser, updateUser } = useContext(AuthContext);
+	const { createUser, updateUser, googleProviderLogIn } =
+		useContext(AuthContext);
+	const googleAuthProvider = new GoogleAuthProvider();
 	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || '/';
 
 	const handleSignUp = (data) => {
 		// console.log(data);
@@ -64,6 +69,17 @@ const SignUp = () => {
 	// 			}
 	// 		});
 	// };
+	const handleGoogleSignUp = () => {
+		googleProviderLogIn(googleAuthProvider)
+			.then((result) => {
+				const user = result.user;
+				console.log(user);
+				saveUser(user.displayName, user.email, 'buyer');
+				navigate(from, { replace: true });
+				// return user;
+			})
+			.catch((error) => console.error('error', error));
+	};
 
 	return (
 		<div>
@@ -127,7 +143,10 @@ const SignUp = () => {
 					</div>
 
 					<div>
-						<button className="btn w-full btn-outline text-lg btn-primary mt-4">
+						<button
+							onClick={handleGoogleSignUp}
+							className="btn w-full btn-outline text-lg btn-primary mt-4"
+						>
 							<FaGoogle></FaGoogle> GOOGLE
 						</button>
 					</div>

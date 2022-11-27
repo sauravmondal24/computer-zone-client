@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
+	const { user } = useContext(AuthContext);
 	const {
 		name,
 		image,
@@ -20,7 +22,21 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 				</figure>
 				<div className="card-body px-7 py-2 ">
 					<div className="flex justify-between items-center">
-						<p className="font-bold text-primary">{category}</p>
+						<h2 className="text-md font-bold">
+							Seller's name:
+							<span className="text-secondary"> {user?.displayName}</span>
+						</h2>
+						<h2 className="font-bold text-black-500">
+							Category: <span className="text-secondary">{category}</span>
+						</h2>
+					</div>
+
+					<p className="card-title text-sm font-bold text-justify">
+						{name.slice(0, 70)}
+						{'...'}
+					</p>
+					<p className="text-justify">{description.slice(0, 70)}</p>
+					<div className="flex justify-between items-center">
 						<h2>
 							<span className="font-bold">Condition: </span>
 							{condition}
@@ -29,12 +45,6 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 							<span className="font-bold">Use: </span> {year} Years
 						</h2>
 					</div>
-
-					<p className="card-title text-sm font-bold text-justify">
-						{name.slice(0, 70)}
-						{'...'}
-					</p>
-					<p className="text-justify">{description.slice(0, 50)}</p>
 					<div className="flex justify-between items-start content-between">
 						<div>
 							<h2 className="font-bold">
@@ -42,9 +52,10 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 							</h2>
 						</div>
 						<div>
-							<span className="font-bold">Resale Price:</span> {resale}
+							<span className="font-bold">Resale Price:</span> ${resale}
 						</div>
 					</div>
+
 					<div className="card-actions pb-4">
 						{/* <button className="btn btn-primary btn-md w-full">Book now</button> */}
 						<label

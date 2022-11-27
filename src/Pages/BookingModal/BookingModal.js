@@ -9,8 +9,8 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 	const handelOrderSubmit = (event) => {
 		event.preventDefault();
 		const productName = bookingLaptop.name;
-		const email = user.email;
-		const displayName = user.displayName;
+		const email = user?.email;
+		const displayName = user?.displayName;
 		const resale = bookingLaptop.resale;
 
 		const form = event.target;
@@ -38,7 +38,8 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
-				toast.success('Order Completed');
+				toast.success('Item is booked.');
+				setBookingLaptop(null);
 			});
 	};
 
@@ -65,14 +66,14 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 							type="text"
 							placeholder="Enter your name"
 							className="input input-bordered w-full my-2"
-							value={user.displayName}
+							value={user?.displayName}
 							readOnly
 						/>
 						<input
 							type="text"
 							placeholder="Type here"
 							className="input input-bordered w-full my-2"
-							value={user.email}
+							value={user?.email}
 							readOnly
 						/>
 						<input

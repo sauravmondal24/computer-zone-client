@@ -6,11 +6,13 @@ import useAdmin from '../Hooks/useAdmin';
 
 import { AuthContext } from '../Context/AuthProvider';
 import useSeller from '../Hooks/useSeller';
+import useBuyer from '../Hooks/useBuyer';
 
 const DashboardLayout = () => {
 	const { user } = useContext(AuthContext);
 	const [isAdmin] = useAdmin(user?.email);
 	const [isSeller] = useSeller(user?.email);
+	const [isBuyer] = useBuyer(user?.email);
 
 	return (
 		<div>
@@ -31,9 +33,12 @@ const DashboardLayout = () => {
 							className="drawer-overlay"
 						></label>
 						<ul className="menu p-4 w-80 bg-base-100 text-base-content">
-							{/* <!-- Sidebar content here --> */}
 							<li>
 								<Link to="/dashboard">Dashboard</Link>
+							</li>
+
+							<li>
+								<Link to="/dashboard/buyerOrder">Buyer Order</Link>
 							</li>
 
 							{isAdmin && (
@@ -45,11 +50,9 @@ const DashboardLayout = () => {
 									<li>
 										<Link to="/dashboard/buyer">All Buyer</Link>
 									</li>
-									{/* <li>
-										<Link to="/dashboard/addProduct">Add A Product</Link>
-									</li> */}
 								</>
 							)}
+
 							{isSeller && (
 								<>
 									<li>

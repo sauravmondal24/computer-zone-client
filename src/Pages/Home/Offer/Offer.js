@@ -50,13 +50,9 @@ const Offer = () => {
 				</div>
 			</div>
 
-			<div className="grid lg:grid-cols-2 gap-4 py-12 content-between justify-around">
-				<div>
-					<img src={img4} alt="" />
-				</div>
-				<div>
-					<img src={img5} alt="" />
-				</div>
+			<div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-2 gap-4 py-12 align-center justify-between">
+				<img src={img4} alt="" />
+				<img src={img5} alt="" />
 			</div>
 		</div>
 	);
