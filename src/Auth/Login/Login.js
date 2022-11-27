@@ -4,8 +4,10 @@ import { useForm } from 'react-hook-form';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
+	useTitle('LogIn');
 	const { register, handleSubmit } = useForm();
 	const [loginError, setLoginError] = useState('');
 	const { logIn, googleProviderLogIn } = useContext(AuthContext);

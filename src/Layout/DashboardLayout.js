@@ -6,13 +6,13 @@ import useAdmin from '../Hooks/useAdmin';
 
 import { AuthContext } from '../Context/AuthProvider';
 import useSeller from '../Hooks/useSeller';
-import useBuyer from '../Hooks/useBuyer';
+import useTitle from '../Hooks/useTitle';
 
 const DashboardLayout = () => {
+	useTitle('Dashboard');
 	const { user } = useContext(AuthContext);
 	const [isAdmin] = useAdmin(user?.email);
 	const [isSeller] = useSeller(user?.email);
-	// const [isBuyer] = useBuyer(user?.email);
 
 	return (
 		<div>

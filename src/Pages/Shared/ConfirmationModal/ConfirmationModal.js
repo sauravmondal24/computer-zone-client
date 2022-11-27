@@ -9,7 +9,6 @@ const ConfirmationModal = ({
 }) => {
 	return (
 		<div>
-			{/* Put this part before </body> tag */}
 			<input type="checkbox" id="confirmation-modal" className="modal-toggle" />
 			<div className="modal">
 				<div className="modal-box">

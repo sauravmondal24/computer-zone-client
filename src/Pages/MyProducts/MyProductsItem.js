@@ -3,17 +3,8 @@ import { AuthContext } from '../../Context/AuthProvider';
 
 const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 	const { user } = useContext(AuthContext);
-	const {
-		name,
-		image,
-		category,
-		description,
-		price,
-		condition,
-		location,
-		resale,
-		year
-	} = myProduct;
+	const { name, image, category, description, price, condition, resale, year } =
+		myProduct;
 	return (
 		<div>
 			<div className="card bg-base-200 shadow-xl h-[550px] border">
@@ -57,7 +48,6 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 					</div>
 
 					<div className="card-actions pb-4">
-						{/* <button className="btn btn-primary btn-md w-full">Book now</button> */}
 						<label
 							onClick={() => setBookingLaptop(myProduct)}
 							className="btn btn-primary btn-md w-full"

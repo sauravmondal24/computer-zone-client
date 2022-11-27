@@ -39,10 +39,11 @@ const BuyerOrder = () => {
 						<thead>
 							<tr>
 								<th></th>
+								<th>Image</th>
 								<th>Product Name</th>
 								<th>User Name</th>
 								<th>User Email</th>
-								<th>Product Price</th>
+								<th>Price</th>
 								<th>Phone Number</th>
 								<th>Location</th>
 								<th>Action</th>
@@ -52,6 +53,9 @@ const BuyerOrder = () => {
 							{buyerOrder.map((orders, i) => (
 								<tr key={orders._id}>
 									<th>{i + 1}</th>
+									<td>
+										<img className="h-10 w-10" src={orders.image} alt="" />
+									</td>
 									<td>{orders.productName.slice(0, 20)}</td>
 									<td>{orders.displayName}</td>
 									<td>{orders.email}</td>

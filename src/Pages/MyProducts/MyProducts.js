@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import MyProductsItem from './MyProductsItem';
 import BookingModal from '../BookingModal/BookingModal';
+import useTitle from '../../Hooks/useTitle';
 
 const MyProducts = () => {
+	useTitle('All Product');
 	const [bookingLaptop, setBookingLaptop] = useState([]);
 	const { data: myProducts = [] } = useQuery({
 		queryKey: ['myProducts'],

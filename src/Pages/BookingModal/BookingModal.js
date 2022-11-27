@@ -4,7 +4,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 
 const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 	const { user } = useContext(AuthContext);
-	const { name, resale } = bookingLaptop;
+	const { name, resale, image } = bookingLaptop;
 
 	const handelOrderSubmit = (event) => {
 		event.preventDefault();
@@ -19,6 +19,7 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 		const meetingLocation = form.meetingLocation.value;
 
 		const result = {
+			image,
 			productName,
 			displayName,
 			email,
@@ -26,8 +27,7 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 			phoneNumber,
 			meetingLocation
 		};
-		console.log(result);
-		// setBookingLaptop(null);
+
 		fetch('http://localhost:5000/buyerOrders', {
 			method: 'POST',
 			headers: {
@@ -45,14 +45,11 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 
 	return (
 		<div>
-			{/* The button to open modal */}
-
-			{/* Put this part before </body> tag */}
 			<input type="checkbox" id="booking-modal" className="modal-toggle" />
 			<div className="modal modal-bottom sm:modal-middle">
 				<div className="modal-box">
 					<form onSubmit={handelOrderSubmit}>
-						{/* <h3 className="font-bold text-lg">{name}</h3> */}
+						<img className="w-1/2 m-auto h-40" src={image} alt="" />
 						<input
 							name="productName"
 							type="text"
@@ -97,7 +94,7 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 						/>
 
 						<div className="modal-action">
-							<button className="btn btn-success">SUBMIT</button>
+							<button className="btn btn-success text-white">SUBMIT</button>
 							<label htmlFor="booking-modal" className="btn">
 								Cancel
 							</label>

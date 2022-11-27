@@ -5,8 +5,10 @@ import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthProvider';
 import toast from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../Hooks/useTitle';
 
 const SignUp = () => {
+	useTitle('Sign Up');
 	const { register, handleSubmit } = useForm();
 	const [singUpError, setSignUpError] = useState('');
 	const { createUser, updateUser, googleProviderLogIn } =
