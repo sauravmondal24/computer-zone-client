@@ -11,16 +11,21 @@ const AllBuyer = () => {
 	const { data: allbuyer = [], refetch } = useQuery({
 		queryKey: ['allbuyer'],
 		queryFn: async () => {
-			const res = await fetch('http://localhost:5000/users/buyer');
+			const res = await fetch(
+				'https://computer-zone-server-alpha.vercel.app/users/buyer'
+			);
 			const data = await res.json();
 			return data;
 		}
 	});
 
 	const handleDeleteBuyer = (seller) => {
-		fetch(`http://localhost:5000/users/seller/${seller._id}`, {
-			method: 'DELETE'
-		})
+		fetch(
+			`https://computer-zone-server-alpha.vercel.app/users/seller/${seller._id}`,
+			{
+				method: 'DELETE'
+			}
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);

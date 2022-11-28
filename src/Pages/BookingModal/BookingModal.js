@@ -27,7 +27,7 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 			meetingLocation
 		};
 
-		fetch('http://localhost:5000/buyerOrders', {
+		fetch('https://computer-zone-server-alpha.vercel.app/buyerOrders', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

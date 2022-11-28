@@ -10,7 +10,7 @@ const SellerProducts = () => {
 		queryKey: ['sellerproducts'],
 		queryFn: async () => {
 			const res = await fetch(
-				`http://localhost:5000/myProducts?seller=${user.email}`
+				`https://computer-zone-server-alpha.vercel.app/myProducts?seller=${user.email}`
 			);
 			const data = await res.json();
 			return data;

@@ -5,7 +5,9 @@ const CategorySec = () => {
 	const { data: MainCategoriesItem = [] } = useQuery({
 		queryKey: ['mainCategory'],
 		queryFn: async () => {
-			const res = await fetch('http://localhost:5000/mainCategory');
+			const res = await fetch(
+				'https://computer-zone-server-alpha.vercel.app/mainCategory'
+			);
 			const data = await res.json();
 			return data;
 		}

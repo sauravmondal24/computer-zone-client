@@ -9,7 +9,9 @@ const ProductsByCategory = () => {
 	const [bookingLaptop, setBookingLaptop] = useState([]);
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/myProducts/${category}`)
+		fetch(
+			`https://computer-zone-server-alpha.vercel.app/myProducts/${category}`
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				setProducts(data);

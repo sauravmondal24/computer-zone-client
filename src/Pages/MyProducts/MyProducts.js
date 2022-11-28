@@ -10,7 +10,9 @@ const MyProducts = () => {
 	const { data: myProducts = [] } = useQuery({
 		queryKey: ['myProducts'],
 		queryFn: async () => {
-			const res = await fetch('http://localhost:5000/myProducts');
+			const res = await fetch(
+				'https://computer-zone-server-alpha.vercel.app/myProducts'
+			);
 			const data = await res.json();
 			return data;
 		}

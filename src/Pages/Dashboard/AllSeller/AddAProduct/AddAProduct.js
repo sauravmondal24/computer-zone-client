@@ -14,7 +14,7 @@ const AddAProduct = () => {
 			seller: user?.email
 		};
 
-		fetch('http://localhost:5000/addProduct', {
+		fetch('https://computer-zone-server-alpha.vercel.app/addProduct', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

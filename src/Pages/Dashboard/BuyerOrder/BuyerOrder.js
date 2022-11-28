@@ -12,16 +12,21 @@ const BuyerOrder = () => {
 	const { data: buyerOrder = [], refetch } = useQuery({
 		queryKey: ['buyerOrder'],
 		queryFn: async () => {
-			const res = await fetch('http://localhost:5000/buyerOrder');
+			const res = await fetch(
+				'https://computer-zone-server-alpha.vercel.app/buyerOrder'
+			);
 			const data = await res.json();
 			return data;
 		}
 	});
 
 	const handleDeleteOrder = (order) => {
-		fetch(`http://localhost:5000/buyerOrder/${order._id}`, {
-			method: 'DELETE'
-		})
+		fetch(
+			`https://computer-zone-server-alpha.vercel.app/buyerOrder/${order._id}`,
+			{
+				method: 'DELETE'
+			}
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);

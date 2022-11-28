@@ -98,7 +98,9 @@ const router = createBrowserRouter([
 				path: '/dashboard/payment/:id',
 				element: <Payment></Payment>,
 				loader: ({ params }) =>
-					fetch(`http://localhost:5000/buyerOrders/${params.id}`)
+					fetch(
+						`https://computer-zone-server-alpha.vercel.app/buyerOrders/${params.id}`
+					)
 			}
 		]
 	},
