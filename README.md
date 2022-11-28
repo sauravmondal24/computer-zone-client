@@ -2,6 +2,11 @@
 
 Live website Link: [https://computer-zone-738c9.web.app/](https://computer-zone-738c9.web.app/).
 
+## Admin Access
+
+- Gmail: sauravmondal321@gmail.com
+- Pass: zxcvbnm
+
 ## Computer Zone | 2nd Hand and Used Laptop Shop, GitHub link
 
 GitHub-client-Link: [https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-sauravmondal24](https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-sauravmondal24)
