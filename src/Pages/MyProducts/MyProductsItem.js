@@ -1,10 +1,20 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 	const { user } = useContext(AuthContext);
-	const { name, image, category, description, price, condition, resale, year } =
-		myProduct;
+	const {
+		name,
+		image,
+		category,
+		description,
+		price,
+		condition,
+		location,
+		resale,
+		year
+	} = myProduct;
 	return (
 		<div>
 			<div className="card bg-base-200 shadow-xl h-[550px] border">
@@ -32,6 +42,11 @@ const MyProductsItem = ({ myProduct, setBookingLaptop }) => {
 							<span className="font-bold">Condition: </span>
 							{condition}
 						</h2>
+						<div className="flex items-center">
+							<FaMapMarkerAlt></FaMapMarkerAlt>
+							<h2>{location}</h2>
+						</div>
+
 						<h2>
 							<span className="font-bold">Use: </span> {year} Years
 						</h2>

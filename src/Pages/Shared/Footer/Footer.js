@@ -10,17 +10,15 @@ import {
 const Footer = () => {
 	return (
 		<footer style={{ backgroundColor: '#132146' }}>
-			<div className="py-12  text-white text-md max-w-screen-xl mx-auto">
+			<div className="py-12 px-8 text-white text-md max-w-screen-xl mx-auto">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-between">
 					<div>
 						<h2 className="text-2xl font-bold py-3">ABOUT US</h2>
 						<p className="text-lg">
 							We are Computer Zone Established on 2014 , We are performing our
 							business with Goodwill, Our Main Motive is customer Satisfaction
-							,We provide genuine product to our customer,We have different
-							kinds of product
 						</p>
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-5 justify-start md:pr-40">
+						<div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 py-5 justify-start md:pr-40">
 							<FaFacebook className="text-2xl"></FaFacebook>
 							<FaInstagram className="text-2xl"></FaInstagram>
 							<FaTwitter className="text-2xl"></FaTwitter>
@@ -75,7 +73,7 @@ const Footer = () => {
 									placeholder="Your Email.."
 									className="input input-bordered w-full"
 								/>
-								<button className="btn btn-square w-20">Signup</button>
+								<button className="btn btn-square md:w-20">Signup</button>
 							</div>
 						</div>
 					</div>

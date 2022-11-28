@@ -24,7 +24,7 @@ const Navbar = () => {
 				<Link to="/myProduct">All Product</Link>
 			</li>
 			<li className="text-lg font-bold">
-				<Link>Contact</Link>
+				<Link to="/contact">Contact</Link>
 			</li>
 			{user?.uid ? (
 				<>

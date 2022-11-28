@@ -17,6 +17,7 @@ const BuyerOrder = () => {
 			return data;
 		}
 	});
+
 	const handleDeleteOrder = (order) => {
 		fetch(`http://localhost:5000/buyerOrder/${order._id}`, {
 			method: 'DELETE'
@@ -63,12 +64,20 @@ const BuyerOrder = () => {
 									<td>{orders.phoneNumber}</td>
 									<td>{orders.meetingLocation}</td>
 									<td>
-										<Link
-											to={`/dashboard/payment/${orders._id}`}
-											className="btn btn-sm btn-success text-white mx-2"
-										>
-											Pay
-										</Link>
+										{orders.resale && !orders.paid && (
+											<Link
+												to={`/dashboard/payment/${orders._id}`}
+												className="btn btn-sm btn-primary text-white mx-2"
+											>
+												Pay
+											</Link>
+										)}
+										{orders.resale && orders.paid && (
+											<button className="btn btn-sm btn-outline btn-success disabled mx-2 text-white">
+												Paid
+											</button>
+										)}
+
 										<label
 											onClick={() => setDeleteOrder(orders)}
 											htmlFor="confirmation-modal"
@@ -76,7 +85,6 @@ const BuyerOrder = () => {
 										>
 											DEL
 										</label>
-										{/* <button className="btn btn-sm btn-error text-white"></button> */}
 									</td>
 								</tr>
 							))}

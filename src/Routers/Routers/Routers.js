@@ -5,12 +5,13 @@ import Error from '../../Error/Error';
 import DashboardLayout from '../../Layout/DashboardLayout';
 import Main from '../../Layout/Main';
 import Blog from '../../Pages/Blog/Blog';
+import Contact from '../../Pages/Contact/Contact';
 import AllBuyer from '../../Pages/Dashboard/AllBuyer/AllBuyer';
 import AddAProduct from '../../Pages/Dashboard/AllSeller/AddAProduct/AddAProduct';
 import AllSeller from '../../Pages/Dashboard/AllSeller/AllSeller';
 import BuyerOrder from '../../Pages/Dashboard/BuyerOrder/BuyerOrder';
-import Dashboard from '../../Pages/Dashboard/Dashboard/Dashboard';
 import Payment from '../../Pages/Dashboard/Payment/Payment';
+import ReportedItems from '../../Pages/Dashboard/ReportedItems/ReportedItems';
 import Home from '../../Pages/Home/Home/Home';
 import MyProducts from '../../Pages/MyProducts/MyProducts';
 import ProductsByCategory from '../../Pages/ProductsByCategory/ProductsByCategory';
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
 			{
 				path: '/blog',
 				element: <Blog></Blog>
+			},
+			{
+				path: '/contact',
+				element: <Contact></Contact>
 			}
 		]
 	},
@@ -57,8 +62,8 @@ const router = createBrowserRouter([
 		errorElement: <DisplayError></DisplayError>,
 		children: [
 			{
-				path: '/dashboard',
-				element: <Dashboard></Dashboard>
+				path: '/dashboard/reportedItems',
+				element: <ReportedItems></ReportedItems>
 			},
 			{
 				path: '/dashboard/seller',

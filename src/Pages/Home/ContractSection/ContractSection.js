@@ -7,13 +7,13 @@ const ContractSection = () => {
 			<div className="py-12 mx-auto max-w-screen-xl ">
 				<div className="hero  ">
 					<div className="hero-content flex-col lg:flex-row-reverse">
-						<div className="text-center lg:text-left w-1/2">
+						<div className="text-center lg:text-left md:w-1/2">
 							<img className="w-full h-ful-screen" src={contact} alt="" />
 						</div>
-						<div className="card flex-shrink-0 w-1/2  shadow-2xl bg-base-100">
+						<div className="card flex-shrink-0 md:w-1/2 shadow-2xl bg-base-100">
 							<div className="card-body font-bold">
 								<h2 className="text-3xl font-bold text-center text-blue-800">
-									Contact Us
+									== Contact Us ==
 								</h2>
 								<div className="form-control">
 									<label className="label">
@@ -21,7 +21,7 @@ const ContractSection = () => {
 									</label>
 									<input
 										type="text"
-										placeholder="Your Full Name"
+										placeholder="Your Full Name ..."
 										className="input input-bordered"
 									/>
 								</div>
@@ -31,7 +31,7 @@ const ContractSection = () => {
 									</label>
 									<input
 										type="text"
-										placeholder="email"
+										placeholder="Email ..."
 										className="input input-bordered"
 									/>
 								</div>
@@ -41,7 +41,7 @@ const ContractSection = () => {
 									</label>
 									<textarea
 										type="text"
-										placeholder="Type Here ......"
+										placeholder="Type Here ..."
 										className="input input-bordered h-36"
 									/>
 								</div>

@@ -4,11 +4,13 @@ import React, { useEffect, useState } from 'react';
 const CheckoutForm = ({ buyerOrder }) => {
 	const [cardError, setCardError] = useState('');
 	const [success, setSuccess] = useState('');
+	const [procession, setProcession] = useState(false);
 	const [transactionId, setTransactionId] = useState('');
+
 	const [clientSecret, setClientSecret] = useState('');
 	const stripe = useStripe();
 	const elements = useElements();
-	const { resale, email, displayName, phoneNumber } = buyerOrder;
+	const { resale, email, displayName, phoneNumber, _id } = buyerOrder;
 	const price = parseInt(resale);
 
 	useEffect(() => {
@@ -47,6 +49,7 @@ const CheckoutForm = ({ buyerOrder }) => {
 			setCardError('');
 		}
 		setSuccess('');
+		setProcession(true);
 
 		const { paymentIntent, error: confirmError } =
 			await stripe.confirmCardPayment(clientSecret, {
@@ -65,10 +68,30 @@ const CheckoutForm = ({ buyerOrder }) => {
 			return;
 		}
 		if (paymentIntent.status === 'succeeded') {
-			setSuccess('Congrats! Your payment is Completed');
-			setTransactionId(paymentIntent.id);
+			const payment = {
+				price,
+				transactionId: paymentIntent.id,
+				email,
+				orderId: _id
+			};
+			console.log('payment info', payment);
+			fetch('http://localhost:5000/payments', {
+				method: 'POST',
+				headers: {
+					'content-type': 'application/json'
+				},
+				body: JSON.stringify(payment)
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					console.log(data);
+					if (data.insertedId) {
+						setSuccess('Congrats! Your payment is Completed');
+						setTransactionId(paymentIntent.id);
+					}
+				});
 		}
-		console.log(paymentIntent);
+		setProcession(false);
 	};
 	return (
 		<>
@@ -93,7 +116,7 @@ const CheckoutForm = ({ buyerOrder }) => {
 				<button
 					className="btn btn-sm btn-primary my-4"
 					type="submit"
-					disabled={!stripe || !clientSecret}
+					disabled={!stripe || !clientSecret || procession}
 				>
 					Pay
 				</button>
