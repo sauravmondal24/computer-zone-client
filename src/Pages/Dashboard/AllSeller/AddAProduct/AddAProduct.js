@@ -2,16 +2,12 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../../Context/AuthProvider';
-// import { useNavigate } from 'react-router-dom';
 
 const AddAProduct = () => {
 	const { register, handleSubmit } = useForm();
-	// const [startDate, setStartDate] = useState(new Date());
 	const { user } = useContext(AuthContext);
-	// const navigate = useNavigate();
 
 	const handleAddProduct = (data) => {
-		// <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />;
 		console.log(data);
 		const product = {
 			...data,
@@ -28,9 +24,7 @@ const AddAProduct = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log('user data', data);
-				// data.reset();
 				toast.success('Product Upload Successful');
-				// navigate('/');
 			});
 	};
 

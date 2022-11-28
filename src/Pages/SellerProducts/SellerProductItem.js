@@ -41,6 +41,7 @@ const SellerProductItem = ({ sellerproduct }) => {
 								Original Price: $<del>{price}</del>
 							</h2>
 						</div>
+
 						<div>
 							<span className="font-bold">Resale Price:</span> {resale}
 						</div>

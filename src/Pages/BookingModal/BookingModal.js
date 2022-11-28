@@ -14,7 +14,6 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 		const resale = bookingLaptop.resale;
 
 		const form = event.target;
-		// const userName = form.userName.value;
 		const phoneNumber = form.phoneNumber.value;
 		const meetingLocation = form.meetingLocation.value;
 

@@ -19,7 +19,6 @@ const SignUp = () => {
 	const from = location.state?.from?.pathname || '/';
 
 	const handleSignUp = (data) => {
-		// console.log(data);
 		setSignUpError('');
 
 		createUser(data.email, data.password, data.role)
@@ -60,17 +59,6 @@ const SignUp = () => {
 			});
 	};
 
-	// const getUserToken = (email) => {
-	// 	fetch(`http://localhost:5000/jwt?email=${email}`)
-	// 		.then((res) => res.json())
-	// 		.then((data) => {
-	// 			if (data.accessToken) {
-	// 				localStorage.setItem('accessToken', data.accessToken);
-	// 				navigate('/');
-	// 				console.log(data);
-	// 			}
-	// 		});
-	// };
 	const handleGoogleSignUp = () => {
 		googleProviderLogIn(googleAuthProvider)
 			.then((result) => {
@@ -78,7 +66,6 @@ const SignUp = () => {
 				console.log(user);
 				saveUser(user.displayName, user.email, 'buyer');
 				navigate(from, { replace: true });
-				// return user;
 			})
 			.catch((error) => console.error('error', error));
 	};
