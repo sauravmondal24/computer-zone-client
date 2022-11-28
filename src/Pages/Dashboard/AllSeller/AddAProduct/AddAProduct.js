@@ -8,7 +8,6 @@ const AddAProduct = () => {
 	const { user } = useContext(AuthContext);
 
 	const handleAddProduct = (data) => {
-		console.log(data);
 		const product = {
 			...data,
 			seller: user?.email
@@ -23,7 +22,6 @@ const AddAProduct = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log('user data', data);
 				toast.success('Product Upload Successful');
 			});
 	};

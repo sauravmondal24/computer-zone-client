@@ -24,7 +24,7 @@ const SignUp = () => {
 		createUser(data.email, data.password, data.role)
 			.then((result) => {
 				const user = result.user;
-				console.log(user);
+
 				toast.success('User Created Successfully');
 
 				const userInfo = {
@@ -37,7 +37,6 @@ const SignUp = () => {
 					.catch((error) => console.error(error));
 			})
 			.catch((error) => {
-				console.error(error);
 				setSignUpError(error.message);
 			});
 	};
@@ -54,7 +53,6 @@ const SignUp = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log('user data', data);
 				navigate('/');
 			});
 	};
@@ -63,7 +61,7 @@ const SignUp = () => {
 		googleProviderLogIn(googleAuthProvider)
 			.then((result) => {
 				const user = result.user;
-				console.log(user);
+
 				saveUser(user.displayName, user.email, 'buyer');
 				navigate(from, { replace: true });
 			})

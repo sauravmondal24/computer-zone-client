@@ -46,7 +46,6 @@ const CheckoutForm = ({ buyerOrder }) => {
 		});
 
 		if (error) {
-			console.log(error);
 			setCardError(error.message);
 		} else {
 			setCardError('');
@@ -77,7 +76,7 @@ const CheckoutForm = ({ buyerOrder }) => {
 				email,
 				orderId: _id
 			};
-			console.log('payment info', payment);
+
 			fetch('https://computer-zone-server-alpha.vercel.app/payments', {
 				method: 'POST',
 				headers: {
@@ -87,7 +86,6 @@ const CheckoutForm = ({ buyerOrder }) => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
 					if (data.insertedId) {
 						setSuccess('Congrats! Your payment is Completed');
 						setTransactionId(paymentIntent.id);

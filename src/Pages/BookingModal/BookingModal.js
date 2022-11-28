@@ -36,7 +36,6 @@ const BookingModal = ({ bookingLaptop, setBookingLaptop }) => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				toast.success('Item is booked.');
 				setBookingLaptop(null);
 			});
