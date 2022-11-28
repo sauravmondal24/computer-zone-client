@@ -4,8 +4,8 @@ Live website Link: [https://computer-zone-738c9.web.app/](https://computer-zone-
 
 ## Admin Access
 
-- Gmail: sauravmondal321@gmail.com
-- Pass: zxcvbnm
+- adminEmail: sauravmondal321@gmail.com
+- adminPassword: zxcvbnm
 
 ## Computer Zone | 2nd Hand and Used Laptop Shop, GitHub link
 
