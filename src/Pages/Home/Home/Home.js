@@ -5,6 +5,7 @@ import CategorySec from '../CategorySec/CategorySec';
 import ContractSection from '../ContractSection/ContractSection';
 import Offer from '../Offer/Offer';
 import OurBrand from '../OurBrand/OurBrand';
+import Guarantee from '../Guarantee&Warranty/Guarantee';
 
 const Home = () => {
 	useTitle('Home');
@@ -14,6 +15,7 @@ const Home = () => {
 			<OurBrand></OurBrand>
 			<CategorySec></CategorySec>
 			<Offer></Offer>
+			<Guarantee></Guarantee>
 			<ContractSection></ContractSection>
 		</div>
 	);

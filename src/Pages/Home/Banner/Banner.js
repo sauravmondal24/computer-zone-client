@@ -1,5 +1,3 @@
-// import React from 'react';
-import { Link } from 'react-router-dom';
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -31,9 +29,9 @@ const Banner = () => {
 						className="mySwiper"
 					>
 						<SwiperSlide>
-							<div className="grid grid-cols-2 justify-between  items-center">
+							<div className="grid md:grid-cols-2 justify-between  items-center px-5">
 								<div className="text-start">
-									<h1 className="text-6xl font-extrabold  text-orange-500">
+									<h1 className="md:text-6xl font-extrabold  text-orange-500">
 										<span className="text-blue-600">Used Laptop for</span>{' '}
 										<br />
 										wholesale and retail
@@ -42,7 +40,7 @@ const Banner = () => {
 										Computer Zone BD is the best used laptop shop in Bangladesh
 										and a leading seller of all kinds of IT products.
 									</p>
-									<button className="btn btn-md my-5 btn-primary">
+									<button className="btn  my-5 btn-primary">
 										ALL PRODUCTS
 									</button>
 								</div>
@@ -56,9 +54,9 @@ const Banner = () => {
 							</div>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="grid grid-cols-2 justify-between  items-center">
+							<div className="grid md:grid-cols-2 justify-between  items-center px-5">
 								<div className="text-start">
-									<h1 className="text-6xl font-extrabold  text-orange-500">
+									<h1 className="md:text-6xl font-extrabold  text-orange-500">
 										<span className="text-blue-600">All good collection</span>
 										<br />
 										of MacBook
@@ -67,7 +65,7 @@ const Banner = () => {
 										Computer Zone BD is the best used laptop shop in Bangladesh
 										and a leading seller of all kinds of IT products.
 									</p>
-									<button className="btn btn-md my-5 btn-primary">
+									<button className="btn md:btn-md my-5 btn-primary">
 										ALL PRODUCTS
 									</button>
 								</div>
@@ -81,9 +79,9 @@ const Banner = () => {
 							</div>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="grid grid-cols-2 justify-between  items-center">
+							<div className="grid md:grid-cols-2 justify-between  items-center px-5">
 								<div className="text-start">
-									<h1 className="text-6xl font-extrabold  text-orange-500">
+									<h1 className="md:text-6xl font-extrabold  text-orange-500">
 										<span className="text-blue-600">Used Laptop for</span>{' '}
 										<br />
 										wholesale and retail
@@ -92,7 +90,7 @@ const Banner = () => {
 										Computer Zone BD is the best used laptop shop in Bangladesh
 										and a leading seller of all kinds of IT products.
 									</p>
-									<button className="btn btn-md my-5 btn-primary">
+									<button className="btn md:btn-md my-5 btn-primary">
 										ALL PRODUCTS
 									</button>
 								</div>

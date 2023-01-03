@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const MainCategories = ({ MainCategory }) => {
 	return (
 		<div>
-			<div className="card bg-base-100 shadow-xl">
+			<div className="card bg-base-100 shadow-xl md:h-[80vh]">
 				<figure className="px-10 pt-10">
 					<img
 						src={MainCategory.image}
