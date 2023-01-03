@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './Context/AuthProvider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import 'aos-animations/dist/animations.min.css';
+// import 'aos-animations/dist/animations.min.js';
 
 const queryClient = new QueryClient();
 

@@ -7,10 +7,21 @@ const ContractSection = () => {
 			<div className="py-12 mx-auto max-w-screen-xl ">
 				<div className="hero  ">
 					<div className="hero-content flex-col lg:flex-row-reverse">
-						<div className="text-center lg:text-left md:w-1/2">
+						<div
+							data-aos="fade-left"
+							data-aos-anchor="#example-anchor"
+							data-aos-offset="500"
+							data-aos-duration="500"
+							className="text-center lg:text-left md:w-1/2"
+						>
 							<img className="w-full h-ful-screen" src={contact} alt="" />
 						</div>
-						<div className="card flex-shrink-0 md:w-1/2 shadow-2xl bg-base-100">
+						<div
+							data-aos="fade-right"
+							data-aos-offset="300"
+							data-aos-easing="ease-in-sine"
+							className="card flex-shrink-0 md:w-1/2 shadow-2xl bg-base-100"
+						>
 							<div className="card-body font-bold">
 								<h2 className="text-3xl font-bold text-center text-blue-800">
 									== Contact Us ==
