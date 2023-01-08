@@ -14,32 +14,32 @@ const Navbar = () => {
 
 	const menuItems = (
 		<React.Fragment>
-			<li className="text-lg font-bold">
+			<li className="text-lg font-normal">
 				<Link to="/">Home</Link>
 			</li>
-			<li className="text-lg font-bold">
+			<li className="text-lg font-normal">
 				<Link to="/blog">Blog</Link>
 			</li>
-			<li className="text-lg font-bold">
+			<li className="text-lg font-normal">
 				<Link to="/myProduct">All Product</Link>
 			</li>
-			<li className="text-lg font-bold">
+			<li className="text-lg font-normal">
 				<Link to="/contact">Contact</Link>
 			</li>
 			{user?.uid ? (
 				<>
-					<li className="text-lg font-bold">
+					<li className="text-lg font-normal">
 						<Link to="/dashboard">Dashboard</Link>
 					</li>
 					<li>
-						<button className="text-lg font-bold" onClick={handleLogOut}>
+						<button className="text-lg font-normal" onClick={handleLogOut}>
 							SignOut
 						</button>
 					</li>
 				</>
 			) : (
 				<li>
-					<Link className="text-lg font-bold" to="/login">
+					<Link className="text-lg font-normal" to="/login">
 						LogIn
 					</Link>
 				</li>
@@ -69,7 +69,7 @@ const Navbar = () => {
 						</label>
 						<ul
 							tabIndex={1}
-							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
 						>
 							{menuItems}
 						</ul>
